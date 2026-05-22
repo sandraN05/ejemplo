@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colegio Ejemplo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --azul: #1a3a5c;
+      --dorado: #c9a84c;
+      --blanco: #f9f7f2;
+      --gris: #eaeaea;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--blanco);
+      color: var(--azul);
+    }
+
+    /* HEADER */
+    header {
+      background: var(--azul);
+      color: white;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    header .logo .icono {
+      width: 48px;
+      height: 48px;
+      background: var(--dorado);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    header .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    header .logo p {
+      font-size: 11px;
+      color: var(--dorado);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--dorado); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--azul) 60%, #2e6da4 100%);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: var(--dorado);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero p {
+      font-size: 17px;
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero a {
+      background: var(--dorado);
+      color: var(--azul);
+      padding: 13px 34px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      animation: fadeUp 1.2s ease both;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .hero a:hover { transform: scale(1.05); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECCIONES */
+    section {
+      padding: 70px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .linea {
+      width: 50px;
+      height: 3px;
+      background: var(--dorado);
+      margin-bottom: 30px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--dorado);
+      transition: transform 0.3s;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+
+    .card .emoji { font-size: 32px; margin-bottom: 12px; }
+    .card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .card p { font-size: 14px; color: #555; line-height: 1.6; }
+
+    /* CONTACTO */
+    .contacto {
+      background: var(--azul);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contacto h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .contacto p { font-size: 15px; color: #ccc; margin-bottom: 6px; }
+    .contacto span { color: var(--dorado); font-weight: 700; }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 18px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <div class="icono">🎓</div>
+      <div>
+        <h1>Colegio Ejemplo</h1>
+        <p>Educando con valores</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#niveles">Niveles</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h2>Bienvenidos a<br>Colegio Ejemplo</h2>
+    <p>Formando líderes del futuro con educación de calidad y valores sólidos.</p>
+    <a href="#contacto">Contáctanos</a>
+  </div>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <h3>Sobre Nosotros</h3>
+    <div class="linea"></div>
+    <p style="font-size:15px; color:#444; max-width:700px; line-height:1.8;">
+      Somos una institución educativa comprometida con la formación integral de nuestros estudiantes. 
+      Brindamos educación de calidad en los niveles inicial, primaria y secundaria, con docentes 
+      altamente capacitados y ambientes modernos de aprendizaje.
+    </p>
+  </section>
+
+  <!-- NIVELES -->
+  <section id="niveles" style="background: var(--gris); max-width:100%; padding: 70px 40px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h3>Nuestros Niveles</h3>
+      <div class="linea"></div>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">🌱</div>
+          <h4>Inicial</h4>
+          <p>Estimulación temprana y desarrollo de habilidades básicas en un ambiente seguro y amoroso.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">📚</div>
+          <h4>Primaria</h4>
+          <p>Formación académica sólida con enfoque en valores, creatividad y pensamiento crítico.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🎯</div>
+          <h4>Secundaria</h4>
+          <p>Preparación integral para el futuro universitario y profesional de nuestros estudiantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <div class="contacto" id="contacto">
+    <h3>Contáctanos</h3>
+    <div class="linea" style="margin: 10px auto 20px;"></div>
+    <p>📍 Av. Principal 123, Arequipa</p>
+    <p>📞 <span>(054) 123-456</span></p>
+    <p>✉️ <span>colegio@ejemplo.edu.pe</span></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Colegio Ejemplo. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
